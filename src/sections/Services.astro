@@ -1,0 +1,232 @@
+---
+import type { ServicesData } from "@/config/landing.interface";
+
+interface Props {
+  data: ServicesData;
+}
+
+// const { data } = Astro.props;
+---
+
+<section class="blog mt-[120px]">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="blog-section-title">
+          <h2>Blog</h2>
+          <p>Leggi gli ultimi post per rimanere aggiornato/a</p>
+        </div>
+        <article class="blog-post">
+          <div class="blog-post-thumb">
+            <img
+              src="https://theredcode.it/images/blog/Paola-Poggini-Cover.webp"
+              alt="blog-thum"
+            />
+          </div>
+          <div class="blog-post-content">
+            <div class="blog-post-tag">
+              <a href="https://theredcode.it/tags/interviste">interviste</a>
+              <a href="https://theredcode.it/tags/voglio-diventare"
+                >voglio-diventare</a
+              >
+            </div>
+            <div class="blog-post-title">
+              <a
+                href="https://theredcode.it/interviste/voglio-diventare-front-end-developer/"
+                >Voglio diventare... Front-end Developer</a
+              >
+            </div>
+            <div class="blog-post-meta">
+              <ul>
+                <li>
+                  Di <a href="https://theredcode.it/about">Serena Sensini</a>
+                </li>
+                <li>2024-03-12 - <i class="fa fa-clock-o"></i> 10 minuti</li>
+              </ul>
+            </div>
+            <p>
+              I percorsi affini sono come strade perpendicolari: prima o poi si
+              incrociano.
+            </p>
+            <a
+              href="https://theredcode.it/interviste/voglio-diventare-front-end-developer/"
+              class="blog-post-action"
+              >Leggi <i class="fa fa-angle-right"></i></a
+            >
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-4">
+        <div class="latest-widget-title">
+          <h2>Prossimi eventi</h2>
+        </div>
+        <div class="card mb-3">
+          <img
+            src="https://theredcode.it/images/eventi/2024coderful.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <div class="blog-post-tag">
+              <a href="https://theredcode.it/tags/onLIFE">#onLIFE</a>
+            </div>
+            <h3>
+              <a
+                href="https://theredcode.it/eventi/2024-coderful/"
+                style="color:inherit">Coderful 2024</a
+              >
+            </h3>
+            <p><i class="fa fa-calendar"></i> 28 giugno 2024</p>
+            <p><i class="fa fa-map-pin"></i> Catania</p>
+            <div class="blog-post-tag">
+              <a href="https://theredcode.it/eventi/2024-coderful/"
+                >Partecipa ➡</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .blog-section-title {
+    margin-bottom: 45px;
+  }
+  .blog-section-title h2 {
+    text-transform: capitalize;
+  }
+  h2 {
+    font-size: 40px;
+    line-height: 55px;
+    color: #141414;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  p {
+    font-size: 16px;
+    color: gray;
+    line-height: 26px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .blog-post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .blog-post-thumb {
+    width: 40%;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .blog-post-thumb img {
+    width: 100%;
+    transition: 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    vertical-align: middle;
+    border-style: none;
+  }
+  .blog-post-content {
+    width: 55%;
+    margin-left: auto;
+  }
+  .blog-post-tag a {
+    background-color: #000;
+    padding: 4px 20px;
+    display: inline-block;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .blog-post-title a {
+    font-size: 26px;
+    font-weight: 700;
+    color: #141414;
+    text-decoration: none;
+    margin-bottom: 8px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    font-family: jost, sans-serif;
+  }
+  .blog-post-meta ul {
+    padding: 0;
+    margin: 0 0 18px;
+    display: flex;
+    list-style: none;
+  }
+  .blog-post-meta ul li:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .blog-post-meta ul li {
+    font-size: 13px;
+  }
+  .blog-post-meta ul li a {
+    color: #000;
+  }
+  .blog-post-action {
+    color: #141414;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-decoration: none;
+  }
+  @media (max-width: 680px) {
+    .blog-section-title {
+      margin-bottom: 30px;
+      text-align: center !important;
+    }
+    .blog-section-title h2 {
+      font-size: 35px;
+    }
+    .blog-post {
+      display: block;
+    }
+    .blog-post-thumb {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .blog-post-thumb img {
+      width: 100%;
+      transition: 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    img {
+      vertical-align: middle;
+      border-style: none;
+    }
+    .blog-post-content {
+      width: 100%;
+      text-align: center;
+    }
+    .blog-post-content {
+      margin-left: auto;
+    }
+    .blog-post-tag a {
+      background-color: #000;
+      padding: 4px 20px;
+      display: inline-block;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 12px;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .blog-post-title a {
+      font-size: 22px;
+    }
+    .blog-post-meta ul {
+      justify-content: center;
+    }
+    .blog-post-meta ul li:not(:last-child) {
+      margin-right: 10px;
+    }
+    .blog-post-content p {
+      display: block;
+    }
+  }
+</style>
