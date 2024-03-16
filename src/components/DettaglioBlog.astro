@@ -1,0 +1,126 @@
+---
+const { e } = Astro.props;
+---
+
+<article class="single-blog">
+  <div class="blog-post-tag">
+    <a href="#">{e.data.tags}</a>
+  </div>
+  <p class="title">{e.data.title}</p>
+  <ul class="meta">
+    <li>Di <a href="https://theredcode.it/about"></a></li>
+    <li>2024-03-12 - <i class="fa fa-clock-o"></i> 10 minuti</li>
+  </ul>
+  <div class="feature-image">
+    <img src={e.data.image} alt="banner" />
+  </div>
+  <div class="single-blog-content">
+    <p>{e.data.description}</p>
+  </div>
+</article>
+
+<style>
+  .single-blog {
+    position: relative;
+    
+    margin: 0 auto; /* Center the element on larger screens */
+    padding: 0 20px 60px;
+  }
+  .blog-post-tag a {
+    background-color: #000;
+    padding: 4px 20px;
+    display: inline-block;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .single-blog .title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #141414;
+    text-decoration: none;
+    display: block;
+    line-height: 60px;
+  }
+  .single-blog .meta {
+    margin: 0;
+    padding: 0 0 60px;
+    display: flex;
+    list-style: none;
+  }
+  .single-blog .meta li:not(:last-child) {
+    margin-right: 10px;
+  }
+  .single-blog .meta li {
+    font-size: 14px;
+  }
+  .single-blog .feature-image {
+    margin: 0 0 30px;
+  }
+  .single-blog .feature-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 10px 25px 40px rgba(18, 21, 26, 7%);
+    max-width: 100%;
+  }
+  .single-blog p {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .single-blog .feature-image img {
+    border-radius: 10px;
+    box-shadow: 10px 25px 40px rgba(18, 21, 26, 7%);
+    max-width: 100%;
+  }
+  @media (max-width: 640px) {
+    p.title {
+      font-size: 30px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .single-blog[data-astro-cid-2vilfqhp] {
+      position: relative;
+      padding: 0 0px 0px;
+    }
+  }
+  @media (min-width: 640px) and (max-width: 1024px) {
+    .single-blog {
+      
+      position: relative;
+      padding: 0 80px 60px;
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    .blog-single .single-blog .title {
+      font-size: 35px;
+    }
+    .single-blog .feature-image {
+      margin: 0 0 30px;
+    }
+    .single-blog .feature-image img {
+      border-radius: 10px;
+      box-shadow: 10px 25px 40px rgba(18, 21, 26, 7%);
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .single-blog {
+      padding: 0 15px 30px;
+    }
+
+    .single-blog p.title {
+      font-size: 24px;
+    }
+
+    .single-blog .feature-image {
+      margin: 0 0 30px;
+    }
+  }
+</style>

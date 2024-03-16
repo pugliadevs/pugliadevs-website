@@ -1,12 +1,17 @@
 ---
-
+import Header from "../sections/Header";
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
+
+
+import { getLandingData } from "../services/data.service";
+
+const data = await getLandingData();
 ---
 
-<Layout title={frontmatter.title}, description={frontmatter.description}>
+<Layout title={frontmatter.title} description={frontmatter.description}>
+	<Header client:load data={data.headerData}  />
 	<div>
-		<h1>{frontmatter.title}</h1>
 		<slot/>
 	</div>
 </Layout>

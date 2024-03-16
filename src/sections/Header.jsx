@@ -21,7 +21,7 @@ const Header = ({ data }) => {
     <>
       <nav className="navcustom ">
         <div className="navcustom__content">
-          <a className="navcustom__logo" href="#">
+          <a className="navcustom__logo" href="/">
             <img src="/logo.jpg" alt="" className=" w-[12.75rem]" />
           </a>
           <ul className="navcustom__menu">
