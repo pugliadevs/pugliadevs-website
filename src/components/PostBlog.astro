@@ -1,58 +1,54 @@
 ---
-import { getCollection } from "astro:content";
-import PostBlog from "../components/PostBlog.astro";
+import type { CollectionEntry } from 'astro:content';
+import { getEntry } from 'astro:content';
 
+type Props = {
+	post: CollectionEntry<"posts">;
+}
+const { post } = Astro.props;
+const { author, description, image, tags, title, date} = post.data
 
-const posts = await getCollection("posts");
-
+const { data: authorDate } = await getEntry("team", author.id)
 ---
 
-<section class="blog mt-[120px]">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="blog-section-title">
-          <h2>Blog</h2>
-          <p>Leggi gli ultimi post per rimanere aggiornato/a</p>
-        </div>
-        {
-          posts.map((post) => ( <PostBlog post={post}/>))
-        }
-      </div>
-      <div class="col-lg-4">
-        <div class="latest-widget-title">
-          <h2>Prossimi eventi</h2>
-        </div>
-        <div class="card mb-3">
-          <img
-            src="https://theredcode.it/images/eventi/2024coderful.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <div class="blog-post-tag">
-              <a href="https://theredcode.it/tags/onLIFE">#onLIFE</a>
-            </div>
-            <h3>
-              <a
-                href="https://theredcode.it/eventi/2024-coderful/"
-                style="color:inherit">Coderful 2024</a
-              >
-            </h3>
-            <p><i class="fa fa-calendar"></i> 28 giugno 2024</p>
-            <p><i class="fa fa-map-pin"></i> Catania</p>
-            <div class="blog-post-tag">
-              <a href="https://theredcode.it/eventi/2024-coderful/"
-                >Partecipa ➡</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
+<article class="blog-post">
+  <div class="blog-post-thumb">
+    <img src={image} alt="blog-thum" />
+  </div>
+  <div class="blog-post-content">
+    <div class="blog-post-tag">
+      <a href="https://theredcode.it/tags/interviste">{tags}</a>
+    </div>
+    <div class="blog-post-title">
+      <a
+        href="https://theredcode.it/interviste/voglio-diventare-front-end-developer/"
+      >
+        {title}
+      </a>
+    </div>
+    <div class="blog-post-meta">
+      <ul>
+        <li class=" text-gray-500 ">
+          Di
+          <a class="font" href="#">{authorDate.name}</a>
+        </li>
+        <li class=" text-gray-500 ">
+          {date.toLocaleDateString(undefined)}<i class="fa fa-clock-o "></i> 10 minuti
+        </li>
+      </ul>
+    </div>
+    <p>
+      {description}
+    </p>
+    <a
+      href={`/posts/${post.slug}`}
+      class="blog-post-action"
+    >
+      Leggi <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+</article>
 <style>
   .blog-section-title {
     margin-bottom: 45px;
