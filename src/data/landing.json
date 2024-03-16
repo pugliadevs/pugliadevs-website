@@ -41,26 +41,33 @@
     "title": "Everything you need to build a website",
     "services": [
       {
-        "title": "Professional Templates",
-        "icon": "DevIcon",
-        "description": "Our templates are crafted by experienced web designers, ensuring a modern and polished look for your site. From typography to element design, every detail is carefully considered to convey a professional image."
+        "title": "PyBari [Talks] #3",
+        "icon": "Details",
+        "description": "PyBari, la vostra dose mensile di Python, è tornata con una novità che vi farà brillare gli occhi più di un bug fixato. Un evento in collaborazione con PugliaDevs, la community degli sviluppatori pugliesi!",
+		"imgUrl": "https://secure.meetupstatic.com/photos/event/a/3/c/5/600_519701925.webp?w=384"
       },
-      {
-        "title": "Integrated Accessibility",
-        "icon": "PlanetIcon",
-        "description": "We care about web accessibility and have integrated features to ensure your site is accessible to all users, including those with visual or motor disabilities. Our templates comply with WCAG accessibility standards to provide an inclusive experience for everyone."
-      },
-      {
-        "title": "SEO-Optimized",
-        "icon": "FileIcon",
-        "description": "We understand the importance of your site being visible in search engines. That's why our templates are optimized for SEO, meaning they are structured and coded to be easily indexed by Google and other search engines, helping to improve your ranking in search results."
-      },
-      {
-        "title": "Easy Set up",
-        "icon": "ConfigIcon",
-        "description": "With our templates, you don't need to be a web development expert to have an impressive site. They are easy to set up and customize, with intuitive options that allow you to change colors, fonts, page layout, and more with just a few clicks. Make your site stand out hassle-free!"
+	  {
+        "title": "Voglio diventare... Front-end Developer",
+        "icon": "interviste",
+        "description": "I percorsi affini sono come strade perpendicolari: prima o poi si incrociano.",
+		"imgUrl": "https://theredcode.it/images/blog/Paola-Poggini-Cover.webp"
       }
-    ]
+    ],
+	"prossimiEventi": [
+		{
+		  "title": "PyBari [Talks] #3",
+		  "icon": "Details",
+		  "location": "PyBari, la vostra dose mensile di Python, è tornata con una novità che vi farà brillare gli occhi più di un bug fixato. Un evento in collaborazione con PugliaDevs, la community degli sviluppatori pugliesi!",
+		  "imgUrl": "https://secure.meetupstatic.com/photos/event/a/3/c/5/600_519701925.webp?w=384"
+		},
+		{
+		  "title": "Voglio diventare... Front-end Developer",
+		  "icon": "interviste",
+		  "date": "2017 giugno 11",
+		  "location": "I percorsi affini sono come strade perpendicolari: prima o poi si incrociano.",
+		  "imgUrl": "https://theredcode.it/images/blog/Paola-Poggini-Cover.webp"
+		}
+	  ]
   },
   "adventajesData": {
     "title": "    Unlock the Power of Luna Landing: Discover the Key Benefits",

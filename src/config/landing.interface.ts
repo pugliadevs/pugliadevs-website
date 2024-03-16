@@ -25,12 +25,21 @@ export interface HeroData {
 export interface ServicesData {
   title: string;
   services: Service[];
+  prossimiEventi: ProssimiEventi[];
 }
 
+export interface ProssimiEventi {
+	title: string;
+	icon: object;
+	date: string;
+	location: string;
+	imgUrl: string;
+  }
 export interface Service {
   title: string;
-  icon: string;
+  icon: object;
   description: string;
+  imgUrl: string;
 }
 
 export interface AdventajesData {

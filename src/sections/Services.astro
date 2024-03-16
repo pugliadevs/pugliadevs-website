@@ -5,7 +5,7 @@ interface Props {
   data: ServicesData;
 }
 
-// const { data } = Astro.props;
+const { data } = Astro.props;
 ---
 
 <section class="blog mt-[120px]">
@@ -16,45 +16,49 @@ interface Props {
           <h2>Blog</h2>
           <p>Leggi gli ultimi post per rimanere aggiornato/a</p>
         </div>
-        <article class="blog-post">
-          <div class="blog-post-thumb">
-            <img
-              src="https://theredcode.it/images/blog/Paola-Poggini-Cover.webp"
-              alt="blog-thum"
-            />
-          </div>
-          <div class="blog-post-content">
-            <div class="blog-post-tag">
-              <a href="https://theredcode.it/tags/interviste">interviste</a>
-              <a href="https://theredcode.it/tags/voglio-diventare"
-                >voglio-diventare</a
-              >
-            </div>
-            <div class="blog-post-title">
-              <a
-                href="https://theredcode.it/interviste/voglio-diventare-front-end-developer/"
-                >Voglio diventare... Front-end Developer</a
-              >
-            </div>
-            <div class="blog-post-meta">
-              <ul>
-                <li>
-                  Di <a href="https://theredcode.it/about">Serena Sensini</a>
-                </li>
-                <li>2024-03-12 - <i class="fa fa-clock-o"></i> 10 minuti</li>
-              </ul>
-            </div>
-            <p>
-              I percorsi affini sono come strade perpendicolari: prima o poi si
-              incrociano.
-            </p>
-            <a
-              href="https://theredcode.it/interviste/voglio-diventare-front-end-developer/"
-              class="blog-post-action"
-              >Leggi <i class="fa fa-angle-right"></i></a
-            >
-          </div>
-        </article>
+        {
+          data.services.map((post) => (
+            <article class="blog-post">
+              <div class="blog-post-thumb">
+                <img
+                  src={post.imgUrl}
+                  alt="blog-thum"
+                />
+              </div>
+              <div class="blog-post-content">
+                <div class="blog-post-tag">
+                  <a href="https://theredcode.it/tags/interviste">{post.icon}</a>
+                  
+                </div>
+                <div class="blog-post-title">
+                  <a href="https://theredcode.it/interviste/voglio-diventare-front-end-developer/">
+                    {post.title}
+                  </a>
+                </div>
+                <div class="blog-post-meta">
+                  <ul>
+                    <li>
+                      Di{" "}
+                      <a href="https://theredcode.it/about">Serena Sensini</a>
+                    </li>
+                    <li>
+                      2024-03-12 - <i class="fa fa-clock-o" /> 10 minuti
+                    </li>
+                  </ul>
+                </div>
+                <p>
+                    {post.description}
+                </p>
+                <a
+                  href="https://theredcode.it/interviste/voglio-diventare-front-end-developer/"
+                  class="blog-post-action"
+                >
+                  Leggi <i class="fa fa-angle-right" />
+                </a>
+              </div>
+            </article>
+          ))
+        }
       </div>
       <div class="col-lg-4">
         <div class="latest-widget-title">
