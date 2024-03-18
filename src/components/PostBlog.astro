@@ -18,11 +18,11 @@ const { data: authorDate } = await getEntry("team", author.id)
   </div>
   <div class="blog-post-content">
     <div class="blog-post-tag">
-      <a href="https://theredcode.it/tags/interviste">{tags}</a>
+      <a href="#">{tags}</a>
     </div>
     <div class="blog-post-title">
       <a
-        href="https://theredcode.it/interviste/voglio-diventare-front-end-developer/"
+        href={`/posts/${post.slug}`}
       >
         {title}
       </a>

@@ -1,37 +1,32 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { getCollection } from "astro:content";
+import { CollectionEntry, getCollection } from "astro:content";
 import DettaglioBlog from "../../components/DettaglioBlog.astro";
 import DettaglioSocial from "../../components/DettaglioSocial.astro";
 import MarkdownWrapper from "../../layouts/MarkdownWrapper.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts");
-  return posts.map((post) => ({
-    params: { slug: post.slug }, 
-    props: { post },
+  const events = await getCollection("events");
+  return events.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
   }));
 }
 
 type Props = {
-  post: CollectionEntry<"posts">;
+  entry: CollectionEntry<"events">;
 };
 
-const { post } = Astro.props;
-
-
+const { entry } = Astro.props;
 ---
 
-<MarkdownWrapper frontmatter={post.data}>
- 
-
+<MarkdownWrapper frontmatter={entry.data}>
   <div class="container mt-52 flex flex-wrap justify-center">
     <div id="Colonna" class="w-full md:w-1/3 lg:w-1/4 px-4 pb-8">
       <DettaglioSocial />
     </div>
-    <div class="w-full  md:w-3/3 lg:w-3/4 px-4 pb-8">
+    <div class="w-full md:w-3/3 lg:w-3/4 px-4 pb-8">
       <div class="flex justify-center items-center content-center">
-        <DettaglioBlog e={post} />
+        <DettaglioBlog e={entry} />
       </div>
     </div>
   </div>

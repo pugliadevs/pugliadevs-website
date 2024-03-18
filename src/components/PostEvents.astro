@@ -1,35 +1,42 @@
 ---
-import { getCollection } from "astro:content";
-import PostBlog from "../components/PostBlog.astro";
-import PostEvents from "../components/PostEvents.astro";
+import type { CollectionEntry } from "astro:content";
 
-const posts = await getCollection("posts");
-
-const events = await getCollection("events");
+type Props = {
+  event: CollectionEntry<"events">;
+};
+const { event } = Astro.props;
+const {  image, tags, title, date, location } = event.data;
 
 
 ---
 
-<section class="blog mt-[120px]">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="blog-section-title">
-          <h2>Blog</h2>
-          <p>Leggi gli ultimi post per rimanere aggiornato/a</p>
-        </div>
-        {posts.slice().reverse().map((post) => <PostBlog post={post} />)}
-      </div>
-      <div class="col-lg-4">
-        <div class="latest-widget-title">
-          <h2>Prossimi eventi</h2>
-        </div>
-        <!-- {events.map((events) => <PostEvents events={events} />)} -->
-		{events.slice().reverse().map(event => <PostEvents event={event} />)}
-      </div>
+<div class="card mb-3">
+  <img src={image} class="card-img-top" alt="..." />
+  <div class="card-body">
+    <div class="blog-post-tag">
+      <a href="#">{tags}</a>
+    </div>
+    <h3>
+      <a
+        href="#"
+        style="color:inherit"
+      >
+        {title}
+      </a>
+    </h3>
+    <p>
+      <i class="fa fa-calendar"></i>
+      {date}
+    </p>
+    <p>
+      <i class="fa fa-map-pin"></i>
+      {location}
+    </p>
+    <div class="blog-post-tag">
+      <a href={`/events/${event.slug}`}> Partecipa ➡ </a>
     </div>
   </div>
-</section>
+</div>
 
 <style>
   .blog-section-title {
