@@ -6,8 +6,6 @@ import PostEvents from "../components/PostEvents.astro";
 const posts = await getCollection("posts");
 
 const events = await getCollection("events");
-
-
 ---
 
 <section class="blog mt-[120px]">
@@ -18,14 +16,24 @@ const events = await getCollection("events");
           <h2>Blog</h2>
           <p>Leggi gli ultimi post per rimanere aggiornato/a</p>
         </div>
-        {posts.slice().reverse().map((post) => <PostBlog post={post} />)}
+        {
+          posts
+            .slice(1, 5)
+            .reverse()
+            .map((post) => <PostBlog post={post} />)
+        }
       </div>
       <div class="col-lg-4">
         <div class="latest-widget-title">
           <h2>Prossimi eventi</h2>
         </div>
-        <!-- {events.map((events) => <PostEvents events={events} />)} -->
-		{events.slice().reverse().map(event => <PostEvents event={event} />)}
+        
+        {
+          events
+            .slice()
+            .reverse()
+            .map((event) => <PostEvents event={event} />)
+        }
       </div>
     </div>
   </div>
@@ -169,5 +177,15 @@ const events = await getCollection("events");
     .blog-post-content p {
       display: block;
     }
+  }
+  @media (max-width: 992px) {
+    .blog-section-title {
+      text-align: center;
+      margin-top: -40px !important;
+    }
+	.latest-widget-title{
+		text-align: center;
+		margin-top: 60px;
+	}
   }
 </style>

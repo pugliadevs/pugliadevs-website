@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../sections/Header";
+import { getLandingData } from "../services/data.service";
+
+const data = await getLandingData();
+---
+
+<Layout>
+  <Header client:load data={data.headerData} />
+  <div class="container">
+    <div class="flex justify-center flex-col">
+      <div class="flex justify-center">
+        <img src="/favicon.png" alt="" />
+      </div>
+
+      <h1 class="text-center">
+        $ Il mondo della tecnologia attraverso guide, tutorial, manuali e
+        creatività.
+      </h1>
+    </div>
+    <h3>ciao</h3>
+  </div>
+</Layout>
+
+<style>
+  img {
+    width: 20%;
+  }
+  .container {
+    margin-top: 260px;
+  }
+</style>

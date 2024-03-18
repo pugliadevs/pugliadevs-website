@@ -3,8 +3,8 @@
     "logo": "/public/logo.jpg",
     "links": [
       { "label": "Eventi", "href": "/events" },
-      { "label": "Blog", "href": "/Blog" },
-      { "label": "About", "href": "#" }
+      { "label": "Blog", "href": "/posts" },
+      { "label": "About", "href": "/about" }
     ]
   },
   "heroData": {

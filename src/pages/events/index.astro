@@ -2,7 +2,9 @@
 import { getCollection } from "astro:content";
 import EventiIndexCard from "../../components/EventiIndexCard.astro";
 import Layout from "../../layouts/Layout.astro";
+import Footer from "../../sections/Footer.astro";
 import Header from "../../sections/Header";
+import Newsletter from "../../sections/Newsletter.astro";
 import { getLandingData } from "../../services/data.service";
 
 const data = await getLandingData();
@@ -11,20 +13,23 @@ const events = await getCollection("events");
 
 <Layout meta={data.meta}>
   <Header client:load data={data.headerData} />
-  <main class="col-8 container">
-    <div class="mt-24 row blog-section-title">
-      <h2 class="leading-6 blog-section-title">Eventi</h2>
-      <p class="text-gray-500 leading-6">
-        Partecipa ai principali eventi del settore #tech
-      </p>
+  <main class="flex flex-col justify-center items-center">
+    <div id="bo" class="lg:w-4/6 md:w-3/4 sm:w-4/6">
+      <div class="row blog-section-title">
+        <h2 class="leading-6 blog-section-title">Eventi</h2>
+        <p class="text-gray-500 leading-6">
+          Partecipa ai principali eventi del settore #tech
+        </p>
+      </div>
       {
         events
           .slice()
           .reverse()
           .map((events) => <EventiIndexCard events={events} />)
       }
+      <Newsletter />
     </div>
-    <!--! qui va il footer -->
+    <Footer />
   </main>
 </Layout>
 
@@ -39,29 +44,23 @@ const events = await getCollection("events");
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-}
+  }
   @media (max-width: 1200px) {
-    .container {
-      max-width: 1140px !important;
-    }
+    
   }
   @media (max-width: 992px) {
-    .container {
-      max-width: 960px !important;
+    
+    .blog-section-title {
+      text-align: center;
     }
-	.blog-section-title {
-    text-align: center;
-}
   }
 
   @media (max-width: 768px) {
-    .container {
-      max-width: 720px !important;
-    }
+    
   }
-  @media (max-width: 576px) {
-    .container {
-      max-width: 540px !important;
-    }
+  @media (max-width: 640px) {
+    #bo{
+		width: 90%;
+	}
   }
 </style>

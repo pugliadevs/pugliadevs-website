@@ -2,7 +2,10 @@
 import { CollectionEntry, getCollection } from "astro:content";
 import DettaglioBlog from "../../components/DettaglioBlog.astro";
 import DettaglioSocial from "../../components/DettaglioSocial.astro";
+import Prose from "../../components/Prose.astro";
 import MarkdownWrapper from "../../layouts/MarkdownWrapper.astro";
+import Footer from "../../sections/Footer.astro";
+import Newsletter from "../../sections/Newsletter.astro";
 
 export async function getStaticPaths() {
   const events = await getCollection("events");
@@ -18,6 +21,7 @@ type Props = {
 
 const { entry } = Astro.props;
 
+const { Content } = await entry.render();
 ---
 
 <MarkdownWrapper frontmatter={entry.data}>
@@ -29,8 +33,15 @@ const { entry } = Astro.props;
       <div class="flex justify-center items-center content-center">
         <DettaglioBlog e={entry} />
       </div>
+      <Prose>
+        <Content />
+      </Prose>
     </div>
+	
   </div>
+  <Newsletter />
+
+  <Footer />
 </MarkdownWrapper>
 
 <style>

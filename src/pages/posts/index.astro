@@ -1,16 +1,23 @@
 ---
-import { getCollection } from "astro:content";
-import PostBlog from "../../components/PostBlog.astro";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../..//layouts/Layout.astro";
+import Footer from "../../sections/Footer.astro";
+import Header from "../../sections/Header";
+import Newsletter from "../../sections/Newsletter.astro";
+import Services from "../../sections/Services.astro";
+import { getLandingData } from "../../services/data.service";
 
-const posts = await getCollection("posts");
+const data = await getLandingData();
 ---
-<Layout >
-<div>
-	<h1>Posts</h1>
-	<div>
-		{posts.map(post => <PostBlog post={post} />)}
-	</div>
-</div>
 
+<Layout meta={data.meta}>
+  <Header client:load data={data.headerData}  />
+  <main class="flex flex-col justify-center items-center mt-28">
+    <div class="w-3/4 ">
+      
+      <Services data={data.servicesData} />
+      <Newsletter />
+    </div>
+    <Footer/>
+  </main>
 </Layout>
+
