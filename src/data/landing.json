@@ -2,7 +2,8 @@
   "headerData": {
     "logo": "/public/logo.jpg",
     "links": [
-      { "label": "Evanti", "href": "/events" },
+      { "label": "Eventi", "href": "/events" },
+      { "label": "Blog", "href": "/Blog" },
       { "label": "About", "href": "#" }
     ]
   },

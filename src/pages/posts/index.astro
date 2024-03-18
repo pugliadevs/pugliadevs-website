@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+import PostBlog from "../../components/PostBlog.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const posts = await getCollection("posts");
+---
+<Layout >
+<div>
+	<h1>Posts</h1>
+	<div>
+		{posts.map(post => <PostBlog post={post} />)}
+	</div>
+</div>
+
+</Layout>

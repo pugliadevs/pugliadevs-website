@@ -1,0 +1,118 @@
+---
+const { events } = Astro.props;
+---
+
+<div class="blog">
+  <article class="blog-post">
+    <div class="blog-post-thumb">
+      <img src={events.data.image} alt="blog-thum" />
+    </div><div class="blog-post-content">
+      <div class="blog-post-tag">
+        <a href="#">{events.data.tags}</a>
+      </div><div class="blog-post-title">
+        <a href={`/events/${events.slug}`}>{events.data.title}</a>
+      </div><p>
+        {events.data.description}
+      </p><a href={`/events/${events.slug}`} class="blog-post-action"
+        >Partecipa<i class="fa fa-angle-right"></i></a
+      >
+    </div>
+  </article>
+</div>
+
+<style>
+  .blog {
+    padding: 60px 0 100px;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 70%;
+  }
+  .blog-post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    max-width: 70%;
+  }
+  .blog-post-thumb {
+    width: 40%;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .blog-post-thumb img {
+    width: 100%;
+    transition: 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .blog-post-content {
+    width: 55%;
+    margin-left: auto;
+  }
+  .blog-post-tag a {
+    background-color: #000;
+    padding: 4px 20px;
+    display: inline-block;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .blog-post-title a {
+    font-size: 26px;
+    font-weight: 700;
+    color: #141414;
+    text-decoration: none;
+    margin-bottom: 8px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    font-family: jost, sans-serif;
+  }
+  p {
+    font-size: 16px;
+    color: gray;
+    line-height: 26px;
+  }
+  .blog-post-action {
+    color: #141414;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-decoration: none;
+  }
+  @media (max-width: 1199px) {
+    .blog-post-title a {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 992px) {
+	.blog{
+		max-width: 100%;
+	}
+    .blog-post {
+      display: block;
+      max-width: 100%;
+    }
+    .blog-post-thumb {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .blog-post-thumb img {
+      width: 100%;
+      transition: 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    .blog-post-content {
+      width: 100%;
+      text-align: center;
+    }
+    .blog-post-title a {
+      font-size: 22px;
+    }
+    .blog-post-content p {
+      display: block;
+    }
+  }
+</style>

@@ -9,6 +9,7 @@ const { post } = Astro.props;
 const { author, description, image, tags, title, date} = post.data
 
 const { data: authorDate } = await getEntry("team", author.id)
+
 ---
 
 
@@ -48,6 +49,7 @@ const { data: authorDate } = await getEntry("team", author.id)
       Leggi <i class="fa fa-angle-right"></i>
     </a>
   </div>
+  
 </article>
 <style>
   .blog-section-title {
