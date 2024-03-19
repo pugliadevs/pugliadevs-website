@@ -21,14 +21,14 @@ export interface ServicesData {
 
 export interface ProssimiEventi {
   title: string;
-  icon: object;
+  icon: string;
   date: string;
   location: string;
   imgUrl: string;
 }
 export interface Service {
   title: string;
-  icon: object;
+  icon: string;
   description: string;
   imgUrl: string;
 }
