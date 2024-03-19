@@ -3,42 +3,41 @@ import Footer from "@/sections/Footer.astro";
 import Newsletter from "@/sections/Newsletter.astro";
 import Layout from "../layouts/Layout.astro";
 import Header from "../sections/Header";
-import { getLandingData } from "../services/data.service";
+import {getLandingData} from "../services/data.service";
 
 const data = await getLandingData();
 ---
 
 <Layout>
-  <Header client:load data={data.headerData} />
-  <div class="container h-[20vh]">
-	<div>
-		<h1 class=" text-center mb-8"> Rimaniamo in contatto</h1>
-		<h3 class=" text-center">iscriviti alla newsletter (non più di una al mese, promesso!) 😉</h3>
-	</div>
-	
-  </div>
+    <Header client:load data={data.headerData}/>
+    <div class="container h-[20vh]">
+    </div>
 
-  <Newsletter />
-  <Footer />
+    <Newsletter/>
+    <Footer/>
 </Layout>
 
 <style>
-  img {
-    width: 20%;
-  }
-  .container {
-    margin-top: 160px;
-  }
-  p {
-    margin-bottom: 50px;
-    font-size: 16px;
-    color: gray;
-    line-height: 26px;
-  }
-  strong {
-    font-weight: bolder;
-  }
-  a {
-    color: rgb(72, 117, 255);
-  }
+    img {
+        width: 20%;
+    }
+
+    .container {
+        margin-top: 160px;
+    }
+
+    p {
+        margin-bottom: 50px;
+        font-size: 16px;
+        color: gray;
+        line-height: 26px;
+    }
+
+    strong {
+        font-weight: bolder;
+    }
+
+    a {
+        color: rgb(72, 117, 255);
+    }
 </style>
