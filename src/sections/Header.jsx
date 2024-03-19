@@ -1,18 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { CiFacebook, CiLinkedin } from "react-icons/ci";
 import { FaXTwitter } from "react-icons/fa6";
 
 const Header = ({ data }) => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
   useEffect(() => {
-    const handleMenuClick = () => {
-      document.body.classList.toggle("menu-open");
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
     };
 
-    const item = document.querySelector(".icon-hamburger");
-    item.addEventListener("click", handleMenuClick);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      item.removeEventListener("click", handleMenuClick);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -40,9 +41,13 @@ const Header = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="fixed  w-[100%]">
+        <div
+          className={`fixed w-[100%] Scompare ${
+            scrollPosition > 1100 ? "scomparsa" : ""
+          }`}
+        >
           <div className="row">
-            <div className="  items-end">
+            <div className="items-end">
               <div className="sociale-icon2 mr-5">
                 <ul>
                   <li>
@@ -130,6 +135,13 @@ const Header = ({ data }) => {
     text-decoration: none;
     border: 1px solid #e0dede;
     transition: all 0.3s ease-in-out;
+  }
+  .Scompare {
+	transition: opacity 0.3s ease-in-out;
+	opacity: 1;
+  }
+  .scomparsa {
+	opacity: 0;
   }
         `}
       </style>
