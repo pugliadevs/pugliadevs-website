@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { CiFacebook, CiLinkedin } from "react-icons/ci";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Header = ({ data }) => {
   useEffect(() => {
@@ -9,30 +11,24 @@ const Header = ({ data }) => {
     const item = document.querySelector(".icon-hamburger");
     item.addEventListener("click", handleMenuClick);
 
-    
-
     return () => {
       item.removeEventListener("click", handleMenuClick);
-
     };
   }, []);
 
   return (
     <>
-      <nav className="navcustom ">
+      <nav className="navcustom">
         <div className="navcustom__content">
           <a className="navcustom__logo" href="/">
-            <img src="/logo.jpg" alt="" className=" w-[12.75rem]" />
+            <img src="/logo.jpg" alt="" className="w-[12.75rem]" />
           </a>
           <ul className="navcustom__menu">
             {data.links.map((item, index) => (
               <li key={index}>
-                <a as="a" href={item.href}>
-                  {item.label}
-                </a>
+                <a href={item.href}>{item.label}</a>
               </li>
             ))}
-            <ul></ul>
           </ul>
           <div className="navcustom__quick">
             <a className="anavcustom" href="#">
@@ -41,6 +37,31 @@ const Header = ({ data }) => {
             <div className="icon-hamburger">
               <span></span>
               <span></span>
+            </div>
+          </div>
+        </div>
+        <div className="fixed  w-[100%]">
+          <div className="row">
+            <div className="  items-end">
+              <div className="sociale-icon2 mr-5">
+                <ul>
+                  <li>
+                    <a href="#" target="_blank">
+                      <CiLinkedin />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank">
+                      <CiFacebook />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank">
+                      <FaXTwitter />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -83,7 +104,33 @@ const Header = ({ data }) => {
    
 	 .navcustom__quick{display: flex; justify-content: flex-end; width: 50%;}
    
-   }
+   }.sociale-icon2 {
+    text-align: end;
+    margin-bottom: 100px;
+  }
+  .sociale-icon2 ul {
+    padding: 0;
+    margin: 0;
+  }
+  .sociale-icon2 ul li {
+    display: inline-block;
+    list-style: none;
+  }
+  .sociale-icon2 ul li a {
+    color: gray;
+    font-size: 26px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid #e0dede;
+    transition: all 0.3s ease-in-out;
+  }
         `}
       </style>
     </>

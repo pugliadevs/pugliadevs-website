@@ -1,4 +1,6 @@
 ---
+import Footer from "@/sections/Footer.astro";
+import Newsletter from "@/sections/Newsletter.astro";
 import Layout from "../layouts/Layout.astro";
 import Header from "../sections/Header";
 import { getLandingData } from "../services/data.service";
@@ -9,18 +11,56 @@ const data = await getLandingData();
 <Layout>
   <Header client:load data={data.headerData} />
   <div class="container">
-    <div class="flex justify-center flex-col">
+    <div class="flex justify-center flex-col mb-8">
       <div class="flex justify-center">
         <img src="/favicon.png" alt="" />
       </div>
 
-      <h1 class="text-center">
+      <h1 class="text-center mb-6 mt-20">
         $ Il mondo della tecnologia attraverso guide, tutorial, manuali e
         creatività.
       </h1>
     </div>
-    <h3>ciao</h3>
+    <div class="mx-24">
+      <h3 class="text-4xl mb-8 font-medium">Ciao! 😁🤙</h3>
+      <p>
+        Sono <strong>Serena Sensini</strong>, Founder @ TheRedCode. Ho aperto
+        questo blog nel 2021 per raccontare il mio lavoro e il mondo
+        dell’informatica a parole semplici, chiare e alla portata di tutte le
+        persone. Sono un’ingegnera informatica specializzata in ambito AI & NLP.
+        Di giorno lavoro come<a href="#"
+          ><em> Enterprise Architect @ Dedalus spa</em>
+        </a>
+        . Di notte scrivo e sono autrice di 5 libri -per ora-. 🖊️
+      </p>
+      <p>
+        <strong>TheRedCode</strong> parla di IT&dev affrontando le tematiche più
+        disparate: intelligenza artificiale, containerizzazione con Docker, strumenti
+        di orchestrazione, sviluppo&design…
+      </p>
+      <h3 class="text-4xl mb-8 font-medium">Perché ho aperto questo blog</h3>
+      <p>
+        Il problema principale nel mondo tech è la <strong>difficoltà</strong> nel
+        raccontare ciò che appartiene al mondo tecnico senza usare il <strong
+          >linguaggio tecnico</strong
+        >. Da qualche anno a questa parte ho accumulato dell’esperienza nel
+        comunicare e <strong>divulgare</strong> su diverse tematiche appartenenti
+        al settore IT attraverso corsi, webinar, incontri e molto altro, e ho deciso
+        di mettere insieme tutte queste capacità per rendere al mondo #tech e alle
+        diverse community parte di quello che ho ricevuto da quando ho iniziato a
+        farne parte.
+      </p>
+      <h3 class="text-4xl mb-8 font-medium">Sentiamoci!</h3>
+      <ul>
+        <li class=" my-3"><a href="#">Linkedin</a></li>
+        <li class=" my-3"><a href="#">Facebook</a></li>
+        <li class=" my-3"><a href="#">Twitter</a></li>
+        <li class=" my-3"><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
   </div>
+  <Newsletter />
+  <Footer />
 </Layout>
 
 <style>
@@ -28,6 +68,18 @@ const data = await getLandingData();
     width: 20%;
   }
   .container {
-    margin-top: 260px;
+    margin-top: 160px;
+  }
+  p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    color: gray;
+    line-height: 26px;
+  }
+  strong {
+    font-weight: bolder;
+  }
+  a {
+    color: rgb(72, 117, 255);
   }
 </style>
