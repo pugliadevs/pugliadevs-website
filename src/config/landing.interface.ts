@@ -1,6 +1,8 @@
 export interface LandingPageData {
   heroData: HeroData;
   servicesData: ServicesData;
+  headerData: object;
+  meta: object;
 }
 
 
