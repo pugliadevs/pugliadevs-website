@@ -32,7 +32,7 @@ const Header = ({ data }) => {
             ))}
           </ul>
           <div className="navcustom__quick">
-            <a className="anavcustom" href="#">
+            <a className="anavcustom" href="/contacts">
               Contacts
             </a>
             <div className="icon-hamburger">
