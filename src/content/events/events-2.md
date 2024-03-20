@@ -10,6 +10,8 @@ image: https://secure.meetupstatic.com/photos/event/a/3/c/5/600_519701925.webp?w
 
 ---
 
+[**Segui il Talk anche su YouTube:**](https://www.youtube.com/watch?v=hf-8mlY5o-o&ab_channel=PugliaDevs)
+ 
 # Track 1: L'evoluzione delle API: da CORBA a OpenAPI e oltre
 
 ### Relatore: Marino Di Clemente
