@@ -32,7 +32,7 @@ const PopUp = () => {
               />
             </a>
             <div className=" flex justify-center">
-              <a href="https://www.youtube.com/watch?v=hf-8mlY5o-o&ab_channel=PugliaDevs" className="mt-3 text-center text-xl text-blue-500 hover:text-blue-800 ease-linear ">
+              <a target="_blank" href="https://www.youtube.com/watch?v=hf-8mlY5o-o&ab_channel=PugliaDevs" className="mt-3 text-center text-xl text-blue-500 hover:text-blue-800 ease-linear ">
                 Non Perderti la Live questa sera!
               </a>
             </div>
