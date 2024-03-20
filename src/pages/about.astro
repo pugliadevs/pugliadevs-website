@@ -11,6 +11,77 @@ const data = await getLandingData();
 <Layout>
   <Header client:load data={data.headerData} />
   <div class="container">
+    <h1 class="text-6xl text-center">About Us</h1>
+    <div class="flex justify-center">
+      <img class="justify-center" src="/favicon.png" alt="" />
+    </div>
+    <h2 class=" text-center my-3">Benvenuti nel Sito degli Sviluppatori Pugliesi! </h2>
+    <p class=" text-center">
+      Ciao a tutti gli appassionati di sviluppo software della nostra
+      meravigliosa Puglia! bt
+      Siamo entusiasti di darvi il benvenuto nel nostro sito dedicato agli
+      sviluppatori che condividono la passione per la programmazione,
+      l'innovazione e la crescita tecnologica nella nostra bellissima regione.
+      Qui troverete un ambiente accogliente e collaborativo dove poter
+      condividere conoscenze, esperienze e progetti entusiasmanti.
+    </p>
+    <h3>🚀 <strong>Cosa ci aspetta?</strong></h3>
+    <p>
+      Discussioni tecniche e condivisione di best practices.
+      Eventi, meetup e workshop locali.
+      Opportunità di networking con altri sviluppatori pugliesi.
+      
+        Supporto reciproco per superare sfide e problemi di programmazione.
+      
+      Progetti collaborativi che valorizzano le competenze locali.
+    </p>
+    <h3>💡 <strong>Come partecipare:</strong></h3>
+    <ol>
+      <li>
+        <strong>Introduzione:</strong> Raccontaci un po' di te sui nostri social nel thread di presentazione.
+        Qual è il tuo stack tecnologico preferito? Quali sono i tuoi progetti attuali?
+      </li>
+      <li>
+        <strong>Partecipazione attiva:</strong> Condividi le tue idee, rispondi alle
+        domande degli altri, e prendi parte alle discussioni.
+      </li>
+      <li>
+        <strong>Eventi:</strong> Partecipa agli eventi locali che organizzeremo periodicamente.
+      </li>
+    </ol>
+    <h3 class=" mt-6">🤝 <strong>Insieme possiamo fare la differenza!</strong></h3>
+    <p>
+      Siamo certi che la nostra comunità crescerà grazie al vostro contributo.
+      Che l'avventura nello sviluppo software pugliese abbia inizio!
+    </p>
+    <p>Buon coding a tutti!</p>
+  </div>
+  <Newsletter />
+  <Footer />
+</Layout>
+
+<style>
+  img {
+    width: 20%;
+  }
+  .container {
+    margin-top: 160px;
+  }
+  p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    color: gray;
+    line-height: 26px;
+  }
+  strong {
+    font-weight: bolder;
+  }
+  a {
+    color: rgb(72, 117, 255);
+  }
+</style>
+
+<!-- <div class="container">
     <div class="flex justify-center flex-col mb-8">
       <div class="flex justify-center">
         <img src="/favicon.png" alt="" />
@@ -73,28 +144,4 @@ const data = await getLandingData();
         </li>
       </ul>
     </div>
-  </div>
-  <Newsletter />
-  <Footer />
-</Layout>
-
-<style>
-  img {
-    width: 20%;
-  }
-  .container {
-    margin-top: 160px;
-  }
-  p {
-    margin-bottom: 50px;
-    font-size: 16px;
-    color: gray;
-    line-height: 26px;
-  }
-  strong {
-    font-weight: bolder;
-  }
-  a {
-    color: rgb(72, 117, 255);
-  }
-</style>
+  </div> -->

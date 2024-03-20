@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { CiFacebook, CiLinkedin } from "react-icons/ci";
 import { FaTelegram } from "react-icons/fa6";
 import { PiYoutubeLogoLight } from "react-icons/pi";
+import PopUp from "./PopUp";
 
 const Header = ({ data }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +19,8 @@ const Header = ({ data }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  
 
   return (
     <>
@@ -33,7 +37,7 @@ const Header = ({ data }) => {
             ))}
           </ul>
           <div className="navcustom__quick">
-            <a className="anavcustom text-[20px]"  href="/contacts">
+            <a className="anavcustom text-[20px]" href="/contacts">
               Contacts
             </a>
             <div className="icon-hamburger">
@@ -85,8 +89,8 @@ const Header = ({ data }) => {
             </div>
           </div>
         </div>
+        <PopUp />
       </nav>
-
       <style>
         {`
 	body, html{
@@ -157,6 +161,34 @@ const Header = ({ data }) => {
   }
   .scomparsa {
 	opacity: 0;
+  }
+  button {
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	font-size: inherit;
+  }
+
+  /* Stile del popup */
+  .popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #ffffffea;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	z-index: 1000; /* Assicura che il popup sia sopra tutti gli altri elementi */
+  }
+
+  /* Stile del pulsante di chiusura */
+  .popup__close {
+	position: absolute;
+	top: -5px;
+	right: 10px;
+	cursor: pointer;
+	font-size: 45px;
   }
         `}
       </style>
