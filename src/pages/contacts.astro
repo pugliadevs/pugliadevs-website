@@ -3,14 +3,17 @@ import Footer from "@/sections/Footer.astro";
 import Newsletter from "@/sections/Newsletter.astro";
 import Layout from "../layouts/Layout.astro";
 import Header from "../sections/Header";
-import {getLandingData} from "../services/data.service";
+import { getLandingData } from "../services/data.service";
 
 const data = await getLandingData();
 ---
 
 <Layout>
     <Header client:load data={data.headerData}/>
-    <div class="container h-[20vh]">
+    <div class="container h-[18vh]">
+		<h1 class=" text-center">Rimaniamo in contatto</h1>
+		<h3 class=" text-center">Iscriviti alla nostra Newsletter</h3>
+		<h4 class=" text-center text-gray-500"> Non riceverai più di un email al mese 😉</h4>
     </div>
 
     <Newsletter/>

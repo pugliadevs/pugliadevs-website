@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CiFacebook, CiLinkedin } from "react-icons/ci";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaTelegram } from "react-icons/fa6";
+import { PiYoutubeLogoLight } from "react-icons/pi";
 
 const Header = ({ data }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -24,7 +25,7 @@ const Header = ({ data }) => {
           <a className="navcustom__logo" href="/">
             <img src="/logo.jpg" alt="" className="w-[12.75rem]" />
           </a>
-          <ul className="navcustom__menu">
+          <ul className="navcustom__menu ">
             {data.links.map((item, index) => (
               <li key={index}>
                 <a href={item.href}>{item.label}</a>
@@ -32,7 +33,7 @@ const Header = ({ data }) => {
             ))}
           </ul>
           <div className="navcustom__quick">
-            <a className="anavcustom" href="/contacts">
+            <a className="anavcustom text-[20px]"  href="/contacts">
               Contacts
             </a>
             <div className="icon-hamburger">
@@ -51,18 +52,32 @@ const Header = ({ data }) => {
               <div className="sociale-icon2 mr-5">
                 <ul>
                   <li>
-                    <a href="#" target="_blank">
+                    <a
+                      href="https://www.linkedin.com/groups/9589581/"
+                      target="_blank"
+                    >
                       <CiLinkedin />
                     </a>
                   </li>
                   <li>
-                    <a href="#" target="_blank">
+                    <a
+                      href="#"
+                      target="https://www.facebook.com/groups/419602630408026/about"
+                    >
                       <CiFacebook />
                     </a>
                   </li>
                   <li>
-                    <a href="#" target="_blank">
-                      <FaXTwitter />
+                    <a href="https://t.me/pugliadevs" target="_blank">
+                      <FaTelegram />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/@pugliadevs/"
+                      target="_blank"
+                    >
+                      <PiYoutubeLogoLight />
                     </a>
                   </li>
                 </ul>
@@ -88,7 +103,7 @@ const Header = ({ data }) => {
    
    .navcustom__menu{padding: 0;margin: 0;}
    .navcustom__menu li{display: inline-block;}
-   .navcustom__menu li a{color:var(--menu-color); opacity: 0.8;display: block;padding: 16px;font-size: 15px;}
+   .navcustom__menu li a{color:var(--menu-color); opacity: 0.8;display: block;padding: 16px;font-size: 19px;}
    
    .anavcustom{color: var(--menu-);}
    

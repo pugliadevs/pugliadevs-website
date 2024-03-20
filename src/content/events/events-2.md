@@ -10,7 +10,7 @@ image: https://secure.meetupstatic.com/photos/event/a/3/c/5/600_519701925.webp?w
 
 ---
 
-## Track 1: L'evoluzione delle API: da CORBA a OpenAPI e oltre
+# Track 1: L'evoluzione delle API: da CORBA a OpenAPI e oltre
 
 ### Relatore: Marino Di Clemente
 
@@ -28,7 +28,7 @@ image: https://secure.meetupstatic.com/photos/event/a/3/c/5/600_519701925.webp?w
 * Focus sull'API-first design, una metodologia emergente che pone l'API al centro del processo di sviluppo software.
 * Discussione sui benefici dell'API-first design e come può aiutare le aziende a creare software più flessibile, scalabile e riutilizzabile.
 
-## Track 2: Hacking industry-grade antibot biometric protections using Engineering
+# Track 2: Hacking industry-grade antibot biometric protections using Engineering
 
 ### Relatore: Alessandro Capriati
 
