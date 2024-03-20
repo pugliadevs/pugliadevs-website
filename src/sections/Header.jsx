@@ -61,8 +61,8 @@ const Header = ({ data }) => {
                   </li>
                   <li>
                     <a
-                      href="#"
-                      target="https://www.facebook.com/groups/419602630408026/about"
+                      href="https://www.facebook.com/groups/419602630408026"
+                      target="_blank"
                     >
                       <CiFacebook />
                     </a>
