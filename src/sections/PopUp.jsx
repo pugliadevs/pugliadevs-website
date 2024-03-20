@@ -31,12 +31,11 @@ const PopUp = () => {
                 alt=""
               />
             </a>
-            <p className="my-3">
-              PyBari, la vostra dose mensile di Python, è tornata con una novità
-              che vi farà brillare gli occhi più di un bug fixato. Un evento in
-              collaborazione con PugliaDevs, la community degli sviluppatori
-              pugliesi!
-            </p>
+            <div className=" flex justify-center">
+              <a href="https://www.youtube.com/watch?v=hf-8mlY5o-o&ab_channel=PugliaDevs" className="mt-3 text-center text-xl text-blue-500 hover:text-blue-800 ease-linear ">
+                Non Perderti la Live questa sera!
+              </a>
+            </div>
           </div>
         </div>
       )}
