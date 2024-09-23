@@ -1,9 +1,19 @@
 import { useEffect, useState } from "react";
+import { getCollection } from "astro:content";
 
 const PopUp = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [latestEvent, setLatestEvent] = useState(null);
 
   useEffect(() => {
+    const fetchLatestEvent = async () => {
+      const events = await getCollection("events");
+      const sortedEvents = events.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+      setLatestEvent(sortedEvents[0]);
+    };
+
+    fetchLatestEvent();
+
     const hasSeenPopup = localStorage.getItem("hasSeenPopup");
     if (hasSeenPopup === "true") {
       setShowPopup(false);
@@ -18,8 +28,12 @@ const PopUp = () => {
 
   const handleClosePopup = () => {
     setShowPopup(false);
-    localStorage.setItem("hasSeenPopup", "true"); // Set flag to true on close
+    localStorage.setItem("hasSeenPopup", "true");
   };
+
+  if (!latestEvent) {
+    return null; // or a loading spinner
+  }
 
   return (
     <>
@@ -29,19 +43,19 @@ const PopUp = () => {
             <span className="popup__close" onClick={handleClosePopup}>
               &times;
             </span>
-            <h3 className="text-center">Non perderti questo talk</h3>
-            <a href="/events">
+            <h3 className="text-center">{latestEvent.data.title}</h3>
+            <a href={`/events/${latestEvent.slug}`}>
               <img
                 className="popup__image w-full"
-                src="https://secure.meetupstatic.com/photos/event/a/3/c/5/600_519701925.webp?w=384"
-                alt=""
+                src={latestEvent.data.image}
+                alt={latestEvent.data.title}
               />
             </a>
-            <div className=" flex justify-center">
+            <div className="flex justify-center">
               <a
                 target="_blank"
-                href="https://www.youtube.com/watch?v=hf-8mlY5o-o&ab_channel=PugliaDevs"
-                className="mt-3 text-center text-xl text-blue-500 hover:text-blue-800 ease-linear "
+                href={latestEvent.data.url}
+                className="mt-3 text-center text-xl text-blue-500 hover:text-blue-800 ease-linear"
               >
                 Non perderti la Live di questa sera!
               </a>

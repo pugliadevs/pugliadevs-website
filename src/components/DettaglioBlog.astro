@@ -9,7 +9,7 @@ const { e } = Astro.props;
   <p class="title">{e.data.title}</p>
   <ul class="meta">
     <li>Di <a href="#"></a></li>
-    <li>2024-03-12 - <i class="fa fa-clock-o"></i> 10 minuti</li>
+    <li>{e.data.date.toLocaleDateString()} - <i class="fa fa-clock-o"></i> 10 minuti</li>
   </ul>
   <div class="feature-image">
     <img src={e.data.image} alt="banner" />
